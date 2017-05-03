@@ -1,0 +1,35 @@
+<div class="row-fluid">
+	<div class="col-md-12">
+		<h1>
+			<i class="fa fa-user" aria-hidden="true"></i>
+			{{user.name}}
+		</h1>		
+		<h2>
+			<i class="fa fa-money" aria-hidden="true"></i>
+			{{user.budget | currency:'COP'}}
+		</h2>		
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="col-md-12">
+		<form action="" (ngSubmit)="calculate()" >
+			<div class="row-fluid">
+				<label for="project">Proyecto</label>
+				<select [(ngModel)]="calculatorInfo.project" name="project">
+					<option value="">Seleccione un Proyecto</option>
+					<option *ngFor="let p of user.favorites" [ngValue]="p" >{{p.name}}</option>
+				</select>
+			</div>
+			<div class="row-fluid">
+				<label for="tasa">Tasa de interes anual</label>
+				<input [(ngModel)]="calculatorInfo.annual_rate" type="text" name="tasa">
+			</div>
+			<div class="row-fluid">
+				<label for="plazo">Plazo en meses</label>
+				<input [(ngModel)]="calculatorInfo.term" type="text" name="plazo">
+			</div>	
+
+			<input type="submit" class="btn btn-success" value="Calcular Valor Cuotas">					
+		</form>
+	</div>
+</div>

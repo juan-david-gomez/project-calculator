@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+section{
+	margin-top: 20px;
+	width: 900px;
+    margin: 0 auto;
+}
+#tableInfo{
+	height: 350px;
+	overflow: scroll;
+}

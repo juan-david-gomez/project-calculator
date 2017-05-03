@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<section>		
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-md-6">
+				<app-user [user]="user" (onSubmitFromCalculate)="calculate($event)" ></app-user>
+			</div>
+			<div class="col-md-6">
+				<app-table [tableInfo]="tableInfo"></app-table>
+			</div>
+		</div>
+	</div>
+</section>

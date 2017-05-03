@@ -1,0 +1,26 @@
+<div class="row-fluid">
+  <div class="col-md-12" *ngIf="tableInfo.active">
+      <h3>Precio del Proyecto {{tableInfo.project.price | currency:'COP'}}</h3>
+      <h4>Cuota Inicial  : {{ tableInfo.initial_payment | currency:'COP' }}</h4>     
+      <h4 *ngIf="tableInfo.initial_installment > 0">Restante Cuota Inicial : {{tableInfo.initial_installment | currency:'COP'  }}</h4>
+      <h4>Valor a Financiar  : {{tableInfo.financing_amount | currency:'COP'  }}</h4>
+      <div id="tableInfo">
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Monto</th>
+                    <th># Cuota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let payment of tableInfo.monthly_payments" >
+                  <td>{{payment.date}}</td>
+                  <td>{{payment.amount | number }}</td>
+                  <td>{{payment.installment}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+  </div>
+</div>
